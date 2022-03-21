@@ -72,7 +72,8 @@ describe('Component: User', () => {
     let spy = spyOn(dataService, 'getDetails')
       .and.returnValue(Promise.resolve('Data'));
     fixture.detectChanges();
-    tick();
+    tick(); // this method will finish async task because we can not wait for naturaly wait until 
+    // async task complete
     expect(app.data).toBe('Data');
 
   }));
